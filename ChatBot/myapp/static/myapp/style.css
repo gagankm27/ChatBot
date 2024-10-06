@@ -1,0 +1,55 @@
+.chatbot{
+    margin: auto auto 50px;
+    width: 70%;
+    border-radius: 10px;
+    border: 2px solid rgb(34, 34, 34);
+    padding: 10px;
+}
+
+.botText{
+    font-family: monospace;
+    font-size: 14px;
+    text-align: left;
+    line-height: 25px;
+    color: rgb(0, 4, 0);
+}
+
+p.userText{
+    text-align: right;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 25px;
+    color: rgb(0, 4, 0);
+}
+
+.userinput{
+    margin: auto auto 40px;
+    width: 70%;
+    text-align: center;
+}
+
+#textinput{
+    border: 3px solid white;   
+    border-bottom: 3px solid #0e0101;
+    font-family: monospace;
+    width:60%;
+    font-size: 14px;
+    padding: 16px;
+    color: rgb(213, 67, 41);
+}
+
+#buttonInput{
+    padding: 5px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 3px solid rgb(32, 18, 18);
+    background-color: rgb(148, 144, 144);
+    border-radius: 10px;
+    width: 7%;
+
+}
+
+h1{
+    text-align: center;
+    color:rgb(57,72,57);
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>ChatBot</h1>
+    <div>
+        <div class="chatbot">
+            <p class="botText"><span>Hi There!!!! </span></p>
+        </div>
+
+        <div class="userinput">
+            <input type="text" id="textinput" name="userinput" placeholder="Type your message...">
+            <input type="submit" value="Send" id="buttonInput">
+        </div>
+    </div>
+
+    {% comment %} <script>
+        function getUserResponse() {
+            var userText = $('#textinput').val();
+            var userHTML = "<p class='userText'><b>User</b>: <span>" + userText + "</span></p>";
+            $('#textinput').val("");
+    
+            $('.chatbot').append(userHTML);
+    
+            $.get('/myapp/getResponse/', {userMessage: userText}).done(function(data) {
+                var returnedMessage = "<p class='botText'><b>Chatbot</b>: <span>" + data.response + "</span></p>";
+                $('.chatbot').append(returnedMessage);
+            });
+        }
+    
+        $('#buttonInput').click(function(event) {
+            event.preventDefault();
+            getUserResponse();
+        });
+    </script> {% endcomment %}
+    <script>
+        // Array of predefined responses
+        const responses = [
+            "Hello! How can I help you today?",
+            "I'm here to assist you.",
+            "What would you like to know?",
+            "Can you please provide more details?",
+            "Interesting! Tell me more.",
+            "I'm not sure about that, but let's find out.",
+            "How can I assist you further?",
+            "That's a great question!",
+            "Let's explore that topic.",
+            "Can you clarify your question?"
+        ];
+    
+        // Function to get a random response from the array
+        function getRandomResponse() {
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            return responses[randomIndex];
+        }
+    
+        // Function to handle user input and generate a response
+        function getUserResponse() {
+            var userText = $('#textinput').val();
+            var userHTML = "<p class='userText'><b>User</b>: <span>" + userText + "</span></p>";
+            $('#textinput').val("");
+    
+            $('.chatbot').append(userHTML);
+    
+            // Get a random response
+            var botResponse = getRandomResponse();
+            var returnedMessage = "<p class='botText'><b>Chatbot</b>: <span>" + botResponse + "</span></p>";
+            $('.chatbot').append(returnedMessage);
+        }
+    
+        // Event listener for the send button
+        $('#buttonInput').click(function(event) {
+            event.preventDefault();
+            getUserResponse();
+        });
+    </script>
+</body>
+</html>
